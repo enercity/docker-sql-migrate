@@ -1,0 +1,16 @@
+kind: pipeline
+name: default
+steps:
+  - name: publish
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      repo: thomaswiener/docker-sql-migrate
+      auto_tag: true
+
+trigger:
+  event:
+    - tag
