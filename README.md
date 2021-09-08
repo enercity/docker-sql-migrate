@@ -1,17 +1,17 @@
-# docker-kustomize
+# docker-sql-migrate
+
 
 Docker plugin to 
-- run kustomize 
-- run kustomize-lqt to generate multiple manifests in a single command
+- run sql-migrate 
 
-Works best with `docker-kubeval-lqt` when to validate multiple manifests at once. 
+Works best with `sql-migrate` when to execute multiple sql files. 
 
 ## Docker
 
 Build the Docker image with the following commands:
 
 ```
-docker build --rm=true -t docker-kustomize .
+docker build --rm=true -t docker-sql-migrate .
 ```
 
 ## Usage
@@ -22,12 +22,12 @@ Execute from the working directory:
 docker run --rm \
   -v $(pwd):$(pwd) \
   -w $(pwd) \
-  kustomize-lqt {SERVICE} {SERVICE} {ENVIRONMENT} {TAG}
+  sql-migrate {UP|DOWN|STATUS}
 ```
 
 ## Syntax
 ```
-./kustomize-lqt {SERVICE} {SERVICE_TYPE} {ENVIRONMENT} {TAG}
+./sql-migrate {UP|DOWN|STATUS} -env={ENVIRONMENT}
 ---
 Description
 SERVICE = technical service name - required
