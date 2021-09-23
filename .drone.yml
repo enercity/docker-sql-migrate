@@ -8,7 +8,7 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
-      repo: thomaswiener/docker-sql-migrate
+      repo: lynqtech/docker-sql-migrate
       auto_tag: true
 
 trigger:
