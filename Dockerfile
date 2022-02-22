@@ -1,6 +1,8 @@
-ARG ALPINE_VERSION=3.12
+ARG ALPINE_VERSION=3.14
+ARG GO_VERSION=1.16.12
 
-FROM golang:alpine${ALPINE_VERSION} as base
+
+FROM golang:${GO_VERSION}-alpine as base
 
 RUN apk update && apk add postgresql git gcc libc-dev
 ENV CGO_ENABLED=0

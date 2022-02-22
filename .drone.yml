@@ -1,5 +1,7 @@
 kind: pipeline
 name: default
+type: docker
+
 steps:
   - name: publish
     image: plugins/docker
